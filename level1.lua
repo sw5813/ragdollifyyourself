@@ -28,8 +28,6 @@ local screenW, screenH, halfW = display.contentWidth, display.contentHeight, dis
 function scene:createScene( event )
 	local group = self.view
 
-	--local params = event.params
-
 	local centerX = display.contentCenterX
 	local centerY = display.contentCenterY
 	local _W = display.contentWidth
@@ -56,7 +54,7 @@ function scene:createScene( event )
 	local color4 = {0, 0, 1, 0.5}
 
 	local walls = ragdoll.createWalls()
-	local doll1 = ragdoll.newRagDoll(0, 100, color1)-- params.image) 
+	local doll1 = ragdoll.newRagDoll(0, 100, color1) 
 	--local doll2 = ragdoll.newRagDoll(200, 320, color2) 
 	--local doll3 = ragdoll.newRagDoll(160, 320, color3) 
 	--local doll4 = ragdoll.newRagDoll(280, 320, color4)

@@ -58,7 +58,7 @@ local function TopLeft( object )
 	object.y = object.y + object.height *.5
 end
 
-function ragdoll.newRagDoll(originX, originY, colorTable)--, imageTarget) 
+function ragdoll.newRagDoll(originX, originY, colorTable) 
        
 	--> Create Ragdoll Group
 	 
@@ -80,11 +80,12 @@ function ragdoll.newRagDoll(originX, originY, colorTable)--, imageTarget)
 	--]]
 	
 	-- Head
-	local head = display.newCircle( startX, startY, 12.5 )
-	--[[display.newImageRect( tostring( imageTarget ), imageTarget.width, imageTarget.height )
+	local path = system.pathForFile( "self.jpg", system.TemporaryDirectory )
+	local head = display.newImage( path )
 	head.x = startX
-	head.y = startY]]
-	setFill(head, colorTable)
+	head.y = startY
+	--display.newCircle( startX, startY, 12.5 )
+	--setFill(head, colorTable)
 	ragdoll:insert (head)
 
 	--[[

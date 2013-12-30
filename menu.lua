@@ -11,16 +11,6 @@ local scene = storyboard.newScene()
 
 -- 'onRelease' event listener for playBtn
 local function onCameraImageCapture()--imageTarget)
-
-	local options =
-	{
-		effect = "fade",
-		time = 500,
-		params =
-			{
-				--image = imageTarget
-			}
-	}
 	
 	-- go to level1.lua scene
 	storyboard.gotoScene( "level1", "fade", 500 )
@@ -73,7 +63,8 @@ function scene:createScene( event )
 			local w = image.width
 			local h = image.height
 			print( "w,h = ".. w .."," .. h )
-			timer.performWithDelay( 1000, onCameraImageCapture() ) 
+			timer.performWithDelay( 1000, onCameraImageCapture ) 
+			display.save( group, "self.jpg", system.TemporaryDirectory )
 		end
 	end
 
