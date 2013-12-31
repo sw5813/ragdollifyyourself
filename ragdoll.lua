@@ -80,12 +80,12 @@ function ragdoll.newRagDoll(originX, originY, colorTable)
 	--]]
 	
 	-- Head
-	local path = system.pathForFile( "self.jpg", system.TemporaryDirectory )
-	local head = display.newImage( path )
-	head.x = startX
-	head.y = startY
-	--display.newCircle( startX, startY, 12.5 )
+	local head = display.newImage("self.jpg", system.TemporaryDirectory, startX, startY)--display.newCircle( startX, startY, 12.5 )
+	--head.fill = { type="image", filename="self.jpg", baseDir = system.TemporaryDirectory }
+	--head.x = startX
+	--head.y = startY
 	--setFill(head, colorTable)
+	
 	ragdoll:insert (head)
 
 	--[[
@@ -290,7 +290,7 @@ local d=1
 local e=0.1
 local f=0.4
 	
-	physics.addBody (head, {bounce = 0.3, density=1.0, friction=0.4, radius = 12.5})
+	physics.addBody (head, {bounce = 0.3, density=1.0, friction=0.4})--, radius = 12.5})
 	physics.addBody (torsoA, {bounce = e, density=d, friction = f})
 	physics.addBody (torsoB, {bounce = e, density=d, friction = f})
 	physics.addBody (torsoC, {bounce = e, density=d, friction = f})

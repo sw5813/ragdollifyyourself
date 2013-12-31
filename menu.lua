@@ -64,7 +64,12 @@ function scene:createScene( event )
 			local h = image.height
 			print( "w,h = ".. w .."," .. h )
 			timer.performWithDelay( 1000, onCameraImageCapture ) 
-			display.save( group, "self.jpg", system.TemporaryDirectory )
+
+			-- save a thumbnail of the image
+			image:scale( 0.1, 0.1 )
+			local thumb = display.newGroup ()
+			thumb:insert(image)
+			display.save( thumb, "self.jpg", system.TemporaryDirectory )
 		end
 	end
 
