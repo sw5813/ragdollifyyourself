@@ -48,7 +48,7 @@ function scene:createScene( event )
 	 
 	system.activate ("multitouch")
 
-	local color1 = {1, 0, 0, 0.5}
+	local color1 = {1, 0, 0, 1}
 	local color2 = {0, 1, 0, 0.5}
 	--local color3 = {1, 1, 0, 0.5}
 	local color4 = {0, 0, 1, 0.5}

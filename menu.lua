@@ -66,10 +66,12 @@ function scene:createScene( event )
 			timer.performWithDelay( 1000, onCameraImageCapture ) 
 
 			-- save a thumbnail of the image
-			image:scale( 0.1, 0.1 )
+			local factor = w/_W
+			print(factor)
+			image:scale( 0.05/factor, 0.05/factor )
 			local thumb = display.newGroup ()
 			thumb:insert(image)
-			display.save( thumb, "self.jpg", system.TemporaryDirectory )
+			display.save( thumb, "self.jpg", system.DocumentsDirectory )
 		end
 	end
 
