@@ -85,7 +85,6 @@ function ragdoll.newRagDoll(originX, originY, colorTable)
 	--head.x = startX
 	--head.y = startY
 	--setFill(head, colorTable)
-	head.alpha = 1	
 	ragdoll:insert (head)
 
 	--[[

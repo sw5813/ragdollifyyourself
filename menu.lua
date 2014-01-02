@@ -63,7 +63,6 @@ function scene:createScene( event )
 			local w = image.width
 			local h = image.height
 			print( "w,h = ".. w .."," .. h )
-			timer.performWithDelay( 1000, onCameraImageCapture ) 
 
 			-- save a thumbnail of the image
 			local factor = w/_W
@@ -72,12 +71,13 @@ function scene:createScene( event )
 			local thumb = display.newGroup ()
 			thumb:insert(image)
 			display.save( thumb, "self.jpg", system.DocumentsDirectory )
+			timer.performWithDelay( 100, onCameraImageCapture ) 
 		end
 	end
 
 	local listener = function( event )
 		if media.hasSource( media.Camera ) then
-			media.show( media.Camera, sessionComplete )
+			media.capturePhoto( {listener = sessionComplete } )
 		else
 			native.showAlert("Corona", "Camera not found.")
 		end
