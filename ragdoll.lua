@@ -81,7 +81,7 @@ function ragdoll.newRagDoll(originX, originY, colorTable)
 	
 	-- Head
 	local head = display.newImage("self.jpg", system.DocumentsDirectory, startX, startY)--display.newCircle( startX, startY, 12.5 )
-	--head.fill = { type="image", filename="self.jpg", baseDir = system.TemporaryDirectory }
+	--head.fill = { type="image", filename="self.jpg", baseDir = system.DocumentsDirectory }
 	--head.x = startX
 	--head.y = startY
 	--setFill(head, colorTable)

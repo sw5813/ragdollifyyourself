@@ -38,7 +38,7 @@ function scene:createScene( event )
 	--> Setup Display
 	display.setStatusBar (display.HiddenStatusBar)
 
-	physics.setDrawMode( 'debug' )
+	--physics.setDrawMode( 'debug' )
 
 	-- For ragdolls, we need to turn off continuous physics to prevent joint instability
 	-- Contiouous physics prevents "tunnelling" effects where an object (e.g. a bullet) 
